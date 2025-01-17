@@ -24,7 +24,7 @@ PuTTY is an open source application that supports remote connection to a compute
 - PuTTY
 
 **The Project**   
-The [website zip file](https://github.com/KimAdrian1/AWS-Terraform-Networking-Environment/blob/94294dee010f3841473bd029db187abd6a0611ee/Movie-Website.zip) I used in this project is provided in this repository along with the [terraform](https://github.com/KimAdrian1/AWS-Terraform-Networking-Environment/blob/94294dee010f3841473bd029db187abd6a0611ee/Networking.tf) file. Before we get started, there are some prerequisites:
+The [website zip file](https://github.com/KimAdrian1/AWS-Terraform-Networking-Environment/blob/94294dee010f3841473bd029db187abd6a0611ee/Movie-Website.zip) I used in this project is provided in this repository along with the [terraform file](https://github.com/KimAdrian1/AWS-Terraform-Networking-Environment/blob/94294dee010f3841473bd029db187abd6a0611ee/Networking.tf). Before we get started, there are some prerequisites:
 
 - Download and install PuTTY  
 - First we need to create an RSA cryptographic key pair which would be used later on for remote SSH connection to the Bastion host and web servers  
