@@ -4,7 +4,7 @@ Project Introduction
 This project demonstrates the process of creating a network environment for a website hosted on Ec2. This project is meant to demonstrate my understanding of the IAC service; Terraform. So far I have dealt with static websites that technically require no CPU processing power. However when dealing with dynamic sites or applications, a server is usually required and that is what I would be using to host the website in this project.
 
 Project Diagram  
-![][image1]  
+![](./images/image5.png)  
 The project diagram above illustrates that EC2 instances will be created as the web servers to host the website, one in each availability zone: us east 1a and us east 1b. Both web servers will be located in private subnets with a route table directing traffic meant for the public internet(0.0.0.0/0) to a NAT gateway. Another EC2 instance created in the public subnet will serve as the Bastion Host for both web servers, ensuring another level of security. The public subnets will route traffic meant for the public internet to the internet Gateway attached to the VPC. An application load balancer spans across the two availability zones to serve incoming HTTP traffic to the web servers. An S3 bucket will host the web site files to be used by the web servers.
 
 What is EC2?  
