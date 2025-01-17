@@ -1,6 +1,6 @@
-**Networking Environment with Terraform**
+# **Networking Environment with Terraform**
 
-Project Introduction  
+# *Project Introduction*  
 This project demonstrates the process of creating a network environment for a website hosted on Ec2. This project is meant to demonstrate my understanding of the IAC service; Terraform. So far I have dealt with static websites that technically require no CPU processing power. However when dealing with dynamic sites or applications, a server is usually required and that is what I would be using to host the website in this project.
 
 Project Diagram  
