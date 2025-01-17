@@ -13,7 +13,7 @@ Amazon Elastic Cloud Compute in simple terms is the actual server resource provi
 **What is PuTTY?**    
 PuTTY is an open source application that supports remote connection to a computer/server usually over SSH traffic using port 22\. It simulates a terminal environment which allows you to interact with your remote server. It also supports key pair authentication using the Private key on the local side of the connection.
 
-Services Used
+**Services Used**  
 
 - Terraform  
 - S3  
@@ -22,8 +22,8 @@ Services Used
 - VPC(Subnets, NAT Gateway, Internet Gateway)  
 - PuTTY
 
-The Project  
-The website files I use in this project are provided in this repository. Before we get started, there are some prerequisites required:
+**The Project**   
+The website zip file I used in this project are provided in this repository along with the terraform file. Before we get started, there are some prerequisites required:
 
 - Download and install PuTTY  
 - First we need to create an RSA cryptographic key pair which would be used later on for remote SSH connection to the Bastion host and web servers  
@@ -151,10 +151,10 @@ Now that the prerequisites have been taken care of, we can now head to the terra
 
 - Remember to run: “terraform destroy” to delete all resources in the AWS account created by Terraform.
 
-Challenges encountered and lessons learned
+**Challenges encountered and lessons learned**
 
 1. Apache kept failing to install originally when I ran my terraform file so my web servers kept being labeled as unhealthy in the target group. Upon investigation in the instance logs, I discovered that the apache installation kept failing because the instance did not yet have internet access at the time the user data script was being run. Linux tried to run that part of the script six more times before skipping over it. This was because when the instance was being launched, the other network resources like the NAT gateway, internet gateway and elastic IP had not been created yet. In order to solve this, I gave the script a sleep time of 180 seconds: “sleep 180”. This means that Linux would only attempt to run the user script 3 minutes after the instance had been created. This was enough time for all other network resources to have been created.  
    
 
-Future plans  
+**Future plans**  
 In one of my upcoming projects, this Networks environment will be reused to host an actual functioning dynamic movie website with Dynamo db, S3 and Lambda as the database layer of the website.
