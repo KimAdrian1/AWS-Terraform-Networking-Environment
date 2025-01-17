@@ -1,16 +1,16 @@
 # **Networking Environment with Terraform**
 
-# Project Introduction    
+**Project Introduction**  
 This project demonstrates the process of creating a network environment for a website hosted on Ec2. This project is meant to demonstrate my understanding of the IAC service; Terraform. So far I have dealt with static websites that technically require no CPU processing power. However when dealing with dynamic sites or applications, a server is usually required and that is what I would be using to host the website in this project.
 
-Project Diagram  
+**Project Diagram**  
 ![](./images/image5.png)  
 The project diagram above illustrates that EC2 instances will be created as the web servers to host the website, one in each availability zone: us east 1a and us east 1b. Both web servers will be located in private subnets with a route table directing traffic meant for the public internet(0.0.0.0/0) to a NAT gateway. Another EC2 instance created in the public subnet will serve as the Bastion Host for both web servers, ensuring another level of security. The public subnets will route traffic meant for the public internet to the internet Gateway attached to the VPC. An application load balancer spans across the two availability zones to serve incoming HTTP traffic to the web servers. An S3 bucket will host the web site files to be used by the web servers.
 
-What is EC2?  
+**What is EC2?**  
 Amazon Elastic Cloud Compute in simple terms is the actual server resource provided by AWS to consumers. There are different configurations of CPU types, RAM, Storage and Network bandwidths packaged into a “Virtual Server” which is charged on a pay-as-you-go model. EC2 is the most barebones processing resource provided by AWS, hence you can control everything about your virtual server such as the OS and Applications installed including databases, web servers etc
 
-What is PuTTY?  
+**What is PuTTY?**    
 PuTTY is an open source application that supports remote connection to a computer/server usually over SSH traffic using port 22\. It simulates a terminal environment which allows you to interact with your remote server. It also supports key pair authentication using the Private key on the local side of the connection.
 
 Services Used
